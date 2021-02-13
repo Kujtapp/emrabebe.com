@@ -1,37 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <title>Second one</title>
+  <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>  
-    <div class="row justify-content-center  mt-5 ">
-        <div class="col col-sm-6 col-md-6 col-lg-6 col-xl-6" > <img src="logo.png" alt="#">
-        </div>
-   
-    <div class="container-fluid h-100 bg-white text-dark m-5 pb-5 " >
-        <div class="row justify-content-center align-items-center h-100">
-            <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                <div class="row justify-content-center align-items-center pt-4">
-                    <h4>Propozo emër</h4>  
-                 </div>
-                <div><hr></div>
-                    <p class="text-center ">Faleminderit kemi pranuar emrin e propozuar dhe do te vendosim ne list së shpejti</p>
-                      <div class="form-group">
-                        <div class="container">
-                          <div class="row">
-                            <a href="#" class="btn btn-success btn-block" id="kyqu" role="button">Propozo një tjeter</a>
-                        </div>
-                      </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+     <!-- Style Sass/Css -->
+     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <!-- font awesom -->
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <!-- Header -->
+      <section id="header">
+            <div class="container mt-3 mb-2 d-flex justify-content-between"> 
+            <i class="fas fa-search mt-1"></i>   
+            <a href="index2.html"><img  src="Images/logo.png" alt="logo" width="120px"></a>
+            <i class="fas fa-bars mt-1"></i>
+            </div>  
+      </section> 
 
-</body>
+    <!-- Content -->  
+    <section id="content">
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-1">
+              <i class="fas fa-angle-left fa-2x"></i>
+          </div>   
+          <div class="col-4"> 
+              <h2 class="mr-2">Resultatet</h2>
+          </div>
+            <div class="col-5">    
+              <a type="button" class="btn btn-brand">Propozo emër</a>
+            </div>
+        </div>    
+            <!-- Cards -->  
+            <!-- First Card -->
+            <div class="card m-auto mt-3" style="width: 90%;">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-5 d-flex justify-content-end">
+                    <i class="far fa-heart fa-3x"></i>
+                  </div>
+                  <div class="col-7 align-items-center">
+                    <h1 class="mb-0">Zana</h1>
+                    <p class="org-text mb-0">Origjina: Trojet Shqiptare</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Second Card -->
+            <div class="card m-auto mt-3" style="width: 90%;">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-5 d-flex justify-content-end">
+                    <i class="far fa-heart fa-3x"></i>
+                  </div>
+                  <div class="col-7 align-items-center">
+                    <h1 class="mb-0">Ana</h1>
+                    <p class="org-text mb-0">Origjina: Trojet Shqiptare</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Third Card -->
+            <div class="card m-auto mt-3" style="width: 90%;">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-5 d-flex justify-content-end">
+                    <i class="far fa-heart fa-3x"></i>
+                  </div>
+                  <div class="col-7 align-items-center">
+                    <h1 class="mb-0">Zna</h1>
+                    <p class="org-text mb-0">Origjina: Trojet Shqiptare</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Fourth Card -->
+            <div class="card m-auto mt-3" style="width: 90%;">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-5 d-flex justify-content-end">
+                    <i class="far fa-heart fa-3x"></i>
+                  </div>
+                  <div class="col-7 align-items-center">
+                    <h1 class="mb-0">Zaa</h1>
+                    <p class="org-text mb-0">Origjina: Trojet Shqiptare</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Five Card -->
+            <div class="card m-auto mt-3" style="width: 90%;">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-5 d-flex justify-content-end">
+                    <i class="far fa-heart fa-3x"></i>
+                  </div>
+                  <div class="col-7 align-items-center">
+                    <h1 class="mb-0">Zan</h1>
+                    <p class="org-text mb-0">Origjina: Trojet Shqiptare</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- ad -->
+              <div class="row text-center mt-4 border">
+                <div class="col-12">
+                  <h3 class="mt-3 mb-3">Ad</h3>
+                </div>
+              </div>
+
+            <!-- articles -->
+            <!-- first article -->
+            <div class="row mt-4">
+              <div class="col-5">
+                <img src="Images/babyfoot.jpg" alt="babyfoot" width="145px">
+              </div>
+              <div class="col-7">
+                <p class="titletext mb-0 text-uppercase small">Fëmiu im</p>
+                <hr class="mt-0 mb-0" width="40%">
+                <p class="small mt-0 mb-0">Titulli I artikullit per beba lirem 
+                  ipshum something...</p>
+                <p class="small">15.10.21</p>
+              </div>
+            </div>
+             <!-- second article -->
+             <div class="row mt-4">
+              <div class="col-5">
+                <img src="Images/babyfoot.jpg" alt="babyfoot" width="145px">
+              </div>
+              <div class="col-7">
+                <p class="titletext mb-0 text-uppercase small">Fëmiu im</p>
+                <hr class="mt-0 mb-0" width="40%">
+                <p class="small mt-0 mb-0">Titulli I artikullit per beba lirem 
+                  ipshum something...</p>
+                <p class="small">15.10.21</p>
+              </div>
+            </div>
+             <!-- third article -->
+             <div class="row mt-4">
+              <div class="col-5">
+                <img src="Images/babyfoot.jpg" alt="babyfoot" width="145px">
+              </div>
+              <div class="col-7">
+                <p class="titletext mb-0 text-uppercase small">Fëmiu im</p>
+                <hr class="mt-0 mb-0" width="40%">
+                <p class="small mt-0 mb-0">Titulli I artikullit per beba lirem 
+                  ipshum something...</p>
+                <p class="small">15.10.21</p>
+              </div>
+            </div>
+             <!-- four article -->
+             <div class="row mt-4">
+              <div class="col-5">
+                <img src="Images/babyfoot.jpg" alt="babyfoot" width="145px">
+              </div>
+              <div class="col-7">
+                <p class=" titletext mb-0 text-uppercase small">Fëmiu im</p>
+                <hr class="mt-0 mb-0" width="40%">
+                <p class="small mt-0 mb-0">Titulli I artikullit per beba lirem 
+                  ipshum something...</p>
+                <p class="small">15.10.21</p>
+              </div>
+            </div>
+            
+           
+            
+          
+      </div>
+    </section>
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+  </body>
+</html>
