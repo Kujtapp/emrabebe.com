@@ -2,7 +2,7 @@
   <div class="container">
     <div class="something"><p>hello</p></div>
     <div class="card" title="private Dashboard">
-      Welcome, Dashboard 
+       Dashboard
       {{ $auth.user.name }}
     </div>
   </div>

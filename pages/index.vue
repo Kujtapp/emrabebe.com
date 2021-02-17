@@ -1,9 +1,21 @@
+<!--<i18n>-->
+<!--  {-->
+<!--    "en": {-->
+<!--    "welcome": "hello world!"-->
+<!--    },-->
+<!--    "fr": {-->
+<!--    "welcome": "something"-->
+<!--    }-->
+<!--  }-->
+<!--</i18n>-->
+
 <template>
 <div class="container">
   <div>
     <div class="row">
       <div class="col-md-4 search-baby-name">
         <a class="navbar-brand col-md-4" href="#"><Logo /></a>
+        <h1>{{  $t('welcome') }}</h1>
         <form @submit.prevent="nonVuexSubmit">
           <div class="form-group">
             <div class="form-group">
@@ -57,7 +69,6 @@ export default {
   },
 
   methods: {
-
     async nonVuexSubmit() {
 
       const config = {

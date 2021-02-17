@@ -45,9 +45,7 @@ export default {
     methods: {
         async createAccount() {
               await this.$axios.get('/sanctum/csrf-cookie');
-                // .then(function( response ){
-               await  this.$axios.post('api/register', this.createAccountForm);
-              // }.bind(this));
+              await  this.$axios.post('api/register', this.createAccountForm);
         },
         hideErrorMessage() {
             this.errorMessage = false;

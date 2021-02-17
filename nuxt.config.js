@@ -30,12 +30,44 @@ export default {
   buildModules: [
   ],
 
+
+  i18n: {
+    locales: [
+      { code: 'en',
+        name: 'English',
+        iso: 'en-US',
+        file: 'en.js'
+      },
+      {
+        code: 'fr',
+        name: 'Français',
+        iso: 'fr-FR',
+        file: 'fr.js'
+      }
+    ],
+
+    lazy: true,
+    langDir: 'lang/',
+    defaultLocale: 'en',
+    // vueI18nLoader: true,
+    vueI18n: {
+      fallbackLocale: 'en',
+    },
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      onlyOnRoot: true,  // recommended
+    }
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
+    'nuxt-i18n',
   ],
+
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -73,6 +105,6 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  }
+  build: {},
+
 }
