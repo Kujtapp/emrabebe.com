@@ -70,27 +70,25 @@
                  with font-awesome or any other icon font library -->
             <li class="nav-item menu-open">
               <nuxt-link to="#" class="nav-link active">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                  Dashboard<i class="right fas fa-angle-left"></i>
-                </p>
+                <font-awesome-icon far icon="tachometer-alt" />
+                <p>Dashboard</p>
               </nuxt-link>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <nuxt-link to="./index.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <font-awesome-icon far icon="user-circle" />
                     <p>Dashboard v1</p>
                   </nuxt-link>
                 </li>
                 <li class="nav-item">
                   <nuxt-link to="./index2.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <font-awesome-icon far icon="question-circle" />
                     <p>Dashboard v2</p>
                   </nuxt-link>
                 </li>
                 <li class="nav-item">
                   <nuxt-link to="./index3.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <font-awesome-icon far icon="question-circle" />
                     <p>Dashboard v3</p>
                   </nuxt-link>
                 </li>
