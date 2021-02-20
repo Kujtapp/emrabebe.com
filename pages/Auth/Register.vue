@@ -4,13 +4,13 @@
             <!-- <p class="error-message">{{  errorMessage }}</p> -->
             <p class="error-message" v-if="errorMessage">Wrong Credentials</p>
             <h1 class="h3 mb-3 font-weight-normal">Register</h1>
-            <label for="inputEmail" class="sr-only">Name</label>
-            <input type="text" v-model="createAccountForm.name" id="inputNmae" class="form-control" placeholder="Name" required="" autofocus="true">
+            <label for="inputName" class="sr-only">Name</label>
+            <input type="text" v-model="createAccountForm.name" id="inputName" class="form-control" placeholder="Name" required="" autofocus="true">
             <label for="inputEmail" class="sr-only">Email address</label>
             <input type="email" v-model="createAccountForm.email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" v-model="createAccountForm.password" id="inputPassword" class="form-control" placeholder="Password" required="">
-            <label for="inputPassword" class="sr-only">Password</label>
+            <label for="inputRetypePassword" class="sr-only">Password</label>
             <input type="password" v-model="retypePassword" id="inputRetypePassword" class="form-control" placeholder="Retype Password" required="">
             <button class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>
         </form>

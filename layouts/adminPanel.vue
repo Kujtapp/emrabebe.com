@@ -28,6 +28,9 @@
 <!--          </div>-->
 <!--        </div>-->
 <!--      </form>-->
+      <div class="navbar-nav ml-auto">
+        <a href="auth/logout" @click.prevent="logout()">Sign Out</a>
+      </div>
     </nav>
     <!-- /.navbar -->
 
@@ -69,15 +72,15 @@
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
             <li class="nav-item menu-open">
-              <nuxt-link to="#" class="nav-link active">
+              <nuxt-link to="dashboard" class="nav-link active">
                 <font-awesome-icon far icon="tachometer-alt" />
                 <p>Dashboard</p>
               </nuxt-link>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <nuxt-link to="./index.html" class="nav-link">
+                  <nuxt-link to="users" class="nav-link">
                     <font-awesome-icon far icon="user-circle" />
-                    <p>Dashboard v1</p>
+                    <p>Users</p>
                   </nuxt-link>
                 </li>
                 <li class="nav-item">
@@ -139,6 +142,16 @@
 <script>
     export default {
         name: "adminPanel",
+
+      methods: {
+        async logout() {
+          try {
+            await this.$auth.logout();
+          } catch (err) {
+            console.log(err);
+          }
+        }
+      }
     }
 </script>
 
@@ -148,4 +161,6 @@
     color: white;
     text-transform: capitalize;
   }
+
+
 </style>

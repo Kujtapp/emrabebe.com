@@ -22,5 +22,10 @@
     "nuxt-i18n": "^6.20.1",
     "vue": "latest"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "fibers": "^5.0.0",
+    "node-sass": "^5.0.0",
+    "sass": "^1.32.8",
+    "sass-loader": "^10.1.1"
+  }
 }

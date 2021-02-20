@@ -30,12 +30,12 @@
                 <em>User</em>
               </template>
               <template v-if="!$auth.loggedIn">
-              <b-dropdown-item to="login">Login</b-dropdown-item>
+              <b-dropdown-item to="auth/login">Login</b-dropdown-item>
               <b-dropdown-item to="register">register</b-dropdown-item>
               </template>
               <template v-if="$auth.loggedIn">
-                <b-dropdown-item to="dashboard">Profile</b-dropdown-item>
-                <b-dropdown-item href="logout" @click.prevent="logout()">Sign Out</b-dropdown-item>
+                <b-dropdown-item to="admin/dashboard">Profile</b-dropdown-item>
+                <b-dropdown-item href="auth/logout" @click.prevent="logout()">Sign Out</b-dropdown-item>
               </template>
             </b-nav-item-dropdown>
           </b-navbar-nav>

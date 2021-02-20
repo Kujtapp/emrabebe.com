@@ -17,6 +17,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/css/main.css',
+    '@/assets/css/main.scss',
     '@fortawesome/fontawesome-svg-core/styles.css'
   ],
 
@@ -102,7 +104,7 @@ export default {
     redirect: {
       login: '/login',
       logout: '/',
-      home: '/dashboard',
+      home: '/admin/dashboard',
     },
   },
 
