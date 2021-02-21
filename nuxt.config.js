@@ -102,7 +102,7 @@ export default {
       },
     },
     redirect: {
-      login: '/login',
+      login: '/auth/login',
       logout: '/',
       home: '/admin/dashboard',
     },

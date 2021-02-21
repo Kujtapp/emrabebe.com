@@ -1,7 +1,7 @@
 <template>
   <div class="middle-container">
     <div class="form-signin">
-        <form @submit.prevent="login()">
+        <form @submit.prevent="login">
             <!-- <p class="error-message">{{  errorMessage }}</p> -->
             <p class="alert alert-danger" v-if="errorMessage">{{ errorMessage }}</p>
             <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
@@ -37,7 +37,6 @@ export default {
 
     methods: {
            async login() {
-                console.log('values', this.loginForm);
                 try {
                     await this.$auth.loginWith('laravelSanctum', {data: this.loginForm})
                 } catch (err) {

@@ -141,7 +141,8 @@
 
 <script>
     export default {
-        name: "adminPanel",
+      name: "adminPanel",
+      middleware: ['admin'],
 
       methods: {
         async logout() {
