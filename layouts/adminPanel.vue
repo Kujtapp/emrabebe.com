@@ -74,7 +74,7 @@
             <li class="nav-item menu-open">
               <nuxt-link to="dashboard" class="nav-link active">
                 <font-awesome-icon far icon="tachometer-alt" />
-                <p>Dashboard</p>
+                <p>{{ $t('dashboard') }}</p>
               </nuxt-link>
               <ul class="nav nav-treeview">
                 <li class="nav-item">

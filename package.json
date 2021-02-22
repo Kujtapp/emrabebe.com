@@ -20,7 +20,8 @@
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12",
     "nuxt-i18n": "^6.20.1",
-    "vue": "latest"
+    "vue": "latest",
+    "vuex": "latest"
   },
   "devDependencies": {
     "fibers": "^5.0.0",
