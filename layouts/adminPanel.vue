@@ -72,13 +72,13 @@
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
             <li class="nav-item menu-open">
-              <nuxt-link to="dashboard" class="nav-link active">
+              <nuxt-link to="/admin/dashboard" class="nav-link active">
                 <font-awesome-icon far icon="tachometer-alt" />
                 <p>{{ $t('dashboard') }}</p>
               </nuxt-link>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <nuxt-link to="users" class="nav-link">
+                  <nuxt-link to="/admin/users" class="nav-link">
                     <font-awesome-icon far icon="user-circle" />
                     <p>Users</p>
                   </nuxt-link>

@@ -31,16 +31,23 @@ export const actions = {
 
   /**
    * fetch a user
-   * @param commit
+   * @param context
    * @param id
    * @returns {Promise<void>}
    */
   async fetch_user(context, id) {
-    let url = '/api/users/';
-    await this.$axios.get(url + id)
-      .then( (user) => {
-        context.commit('SET_USER', user.data);
-      });
+    let index = "";
+    try {
+      index = context.state.users.filter(( index ) => index.id == id);
+      context.commit('SET_USER', index[0]);
+    } catch (e) {
+      let url = '/api/users/';
+      await this.$axios.get(url + id)
+        .then( (user) => {
+          context.commit('SET_USER', user.data);
+        });
+    }
+
   }
 };
 
@@ -67,7 +74,6 @@ export const mutations = {
   },
 
 
-
 };
 
 export const getters = {
@@ -77,6 +83,7 @@ export const getters = {
   },
 
   user: (state) => {
+
     return state.user;
   }
 

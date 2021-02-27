@@ -7,8 +7,7 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <b-nav-item v-if="user" >Dashboard</b-nav-item>
-            <nuxt-link :to="localePath('/admin/dashboard')">{{ $t('dashboard') }}</nuxt-link>
+            <nuxt-link v-if="$auth.loggedIn" :to="localePath('/admin/dashboard')">{{ $t('dashboard') }}</nuxt-link>
             <b-nav-item to="articles">Articles</b-nav-item>
 
           </b-navbar-nav>
@@ -29,7 +28,8 @@
               <!-- Using 'button-content' slot -->
               <template #button-content>
                 <font-awesome-icon far icon="user-circle" />
-                <em>{{user}}</em>
+                <em v-if="$auth.loggedIn">{{ $auth.user.name }}</em>
+                <em v-if="!$auth.loggedIn">User</em>
               </template>
               <template v-if="!$auth.loggedIn">
               <b-dropdown-item to="/auth/login">Login</b-dropdown-item>
@@ -48,16 +48,16 @@
 </template>
 
 <script>
+import {mapGetters} from "vuex";
+
 export default {
 
   data(){
     return {
-      user: this.$auth.user.name || 'user'
     }
   },
 
   methods: {
-
     async logout() {
       try {
         await this.$auth.logout();
