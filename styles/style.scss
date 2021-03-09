@@ -1,0 +1,80 @@
+@import "./variables";
+body {
+    font-family: $primaryFont;
+    font-size: 16px;
+    background-color: $body;
+}
+p {
+    color: $secondary;
+}
+.nav-link {
+    color: $secondary; 
+    &:hover {
+        color: $brand;
+    }
+}
+.baby {
+    position: absolute;
+}
+.wrapper {
+    position: relative;
+}
+.ops {
+    position: absolute;
+}
+.navbar-toggler-icon {
+    color: white;
+    background-color: $brand;
+}
+// brand custom button
+.btn-brand {
+    color: #fff;
+    background-color: $brand;
+    border: none;
+    border-radius: 1;
+    & 
+    :hover,
+    :active,
+    :focus,
+    .active {
+        background: $brand;
+        color: #ffffff;
+        border-color: $brand;
+    }
+}
+
+// custom padding X button style
+.px-6 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+// custom h7 tag style
+.h7 {
+    font-size: 100px;
+    color: $secondary;
+    font-weight: normal;
+    &
+    h4 {
+        color: $secondary;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .baby {
+        display: none;
+    }
+    .fa-bars{
+        margin-right: auto;
+    }
+}
+.fa-bars {
+    color: $brand;
+    font-size: 30px;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}

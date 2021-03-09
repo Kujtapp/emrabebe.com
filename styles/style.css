@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background-color: #EEE;
+}
+
+p {
+  color: #868E96;
+}
+
+.nav-link {
+  color: #868E96;
+}
+
+.nav-link:hover {
+  color: #8FC74A;
+}
+
+.baby {
+  position: absolute;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.ops {
+  position: absolute;
+}
+
+.navbar-toggler-icon {
+  color: white;
+  background-color: #8FC74A;
+}
+
+.btn-brand {
+  color: #fff;
+  background-color: #8FC74A;
+  border: none;
+  border-radius: 1;
+}
+
+.btn-brand :hover,
+.btn-brand :active,
+.btn-brand :focus,
+.btn-brand .active {
+  background: #8FC74A;
+  color: #ffffff;
+  border-color: #8FC74A;
+}
+
+.px-6 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.h7 {
+  font-size: 100px;
+  color: #868E96;
+  font-weight: normal;
+}
+
+.h7 h4 {
+  color: #868E96;
+}
+
+@media screen and (max-width: 768px) {
+  .baby {
+    display: none;
+  }
+  .fa-bars {
+    margin-right: auto;
+  }
+}
+
+.fa-bars {
+  color: #8FC74A;
+  font-size: 30px;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/*# sourceMappingURL=style.css.map */
