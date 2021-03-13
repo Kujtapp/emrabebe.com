@@ -84,9 +84,9 @@
                   </nuxt-link>
                 </li>
                 <li class="nav-item">
-                  <nuxt-link to="./index2.html" class="nav-link">
+                  <nuxt-link to="/admin/articles" class="nav-link">
                     <font-awesome-icon far icon="question-circle" />
-                    <p>Dashboard v2</p>
+                    <p>Articles</p>
                   </nuxt-link>
                 </li>
                 <li class="nav-item">

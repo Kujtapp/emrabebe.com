@@ -28,8 +28,8 @@ export default {
     data() {
         return {
             loginForm: {
-                email: 'admin@admin.com',
-                password: 'password'
+                email: '',
+                password: ''
             },
             errorMessage: ''
         }

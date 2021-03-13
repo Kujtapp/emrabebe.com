@@ -12,6 +12,7 @@
 
 
 export default {
+  name: 'Dashboard',
   layout: 'adminPanel',
   middleware: "auth"
 }

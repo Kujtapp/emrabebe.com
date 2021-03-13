@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-10"><h3>{{ article.title }}</h3></div>
       <div class="col-1">
-        <nuxt-link :to="`${article.slug}/edit`" class="btn btn-warning">Edit</nuxt-link>
+        <nuxt-link :to="`/admin/articles/${article.slug}/edit`" class="btn btn-warning">Edit</nuxt-link>
       </div>
     </div>
     <div class="row">
@@ -33,6 +33,9 @@
 
 <script>
   export default {
-    props: ['article']
+    name: "article-details",
+    layout: 'adminPanel',
+    middleware: 'admin',
+    props: ['article'],
   }
 </script>

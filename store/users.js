@@ -19,14 +19,36 @@ export const state = () => ({
 export const actions = {
   /**
    * get all users
-   * @param commit
    * @returns {Promise<void>}
    * @constructor
+   * @param context
    */
-  async ALL_USERS({commit}) {
-    let url = '/api/users';
-    const users = await this.$axios.get(url);
-    commit('SET_USERS', users.data);
+  async FETCH_ALL_USERS(context) {
+    let users = '';
+    if (Object.keys(context.state.users).length !== 0) {
+      return this.state.users;
+    } else {
+      let url = '/api/users';
+      try {
+        users = await this.$axios.get(url);
+      } catch (err) {
+        switch (err.users.data.status) {
+          case 422:
+            this.errorMessage = 'incorrect credentials';
+            break;
+          case 500:
+            this.errorMessage = 'Server is not responding please try later';
+            break;
+          case 403:
+            this.errorMessage = 'User not verified, please check you email';
+            break;
+          default:
+            this.errorMessage = 'Something went wrong';
+            break;
+        }
+      }
+      context.commit('SET_USERS', users.data);
+    }
   },
 
   /**

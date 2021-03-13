@@ -1,3 +1,4 @@
+// import assign from "lodash.assign";
 
 function initialArticleState() {
   return {
@@ -5,12 +6,8 @@ function initialArticleState() {
       title: '',
       slug: '',
       content: '',
-      photo: '',
-      public: true,
-      // category: [],
-      created_at: '',
-      updated_at: '',
-      cat: []
+      category_id: [],
+      is_public: true,
     },
   }
 }
@@ -27,49 +24,30 @@ function initialArticleFilters() {
 
 export const state = () => ({
   ...initialArticleState(),
-  articleStateChanged: false,
-  articles: {},
+  articles: [],
+  article: {
+  },
+  currentSort: 'id',
+  currentSortDir: 'desc',
   ...initialArticleFilters()
-})
+});
 
 export const actions = {
 
-  async FETCH_ALL_ARTICLES({ commit }) {
-    // if (!context.state.articleStateChanged && Object.keys(context.state.articles).length !== 0 ) {
-    //   return this.state.article;
-    // } else {
-    console.log('here');
-    let url = '/articles?page=';
-    const article = await this.$axios.get(url);
-    commit('SET_ALL_ARTICLES', article.data);
-    // }
-  },
-
-  /**
-   * fetch filtered article
-   * @param context
-   * @param page
-   */
-  async FETCH_FILTERED_ARTICLES(context, page) {
-    let url = '/api/article?';
-
-    if (page > 0) {
-      url += "page=" + page;
+  async FETCH_ALL_ARTICLES(context) {
+    if (Object.keys(context.state.articles).length !== 0 ) {
+      return this.state.articles;
     } else {
-      url += "page=1"
+    const url = '/api/articles';
+      console.log('new state');
+    const articles = await this.$axios.get(url);
+      context.commit('SET_ALL_ARTICLES', articles.data);
     }
-
-    if (context.state.articleFilter.search) {
-      url += "&search=" + context.state.articleFilter.search;
-    }
-    if (context.state.articleFilter.category > 0) {
-      url += "&cat=" + context.state.articleFilter.category
-    }
-
-    const article = await axios.get(url);
-    context.commit('SET_ALL_ARTICLES', article.data);
   },
 
+  SORT_ARTICLES: (context, s) => {
+    context.commit('SET_SORT_ARTICLES', s);
+  },
 
   /**
    * reset article filters
@@ -87,10 +65,10 @@ export const actions = {
    * @returns {Promise<void>}
    * @constructor
    */
-  async FETCH_ARTICLE_DATA(context, slug) {
-    const url = '/article/';
-    console.log('slug -> ', slug);
+  async FETCH_ARTICLE(context, slug) {
+    const url = '/api/articles/';
     const article = await this.$axios.get(url + slug);
+    console.log('article', article.data);
     context.commit('SET_ARTICLE_DATA', article.data);
   },
 
@@ -101,23 +79,23 @@ export const actions = {
    * @constructor
    */
   async CREATE_ARTICLE({state}) {
-    const url = '/api/article/';
-    await axios.post(url, state.article);
-    state.articleStateChanged = true;
+    state.articles = [];
+    const url = '/api/articles/';
+    await this.$axios.post(url, state.article);
   },
 
   /**
    * update article
-   * @param state
-   * @param id
    * @returns {Promise<void>}
    * @constructor
+   * @param context
    */
-  async UPDATE_ARTICLE({state}) {
-    console.log('hero -> ', state);
-    const url = '/articles/';
-    await this.$axios.put(url + state.article.id, state.article);
-    state.articleStateChanged = true;
+  async UPDATE_ARTICLE(context) {
+    state.articles = [];
+    const url = '/api/articles/';
+    // await this.$axios.get('/sanctum/csrf-cookie');
+    await this.$axios.put(url + context.state.article.id, context.state.article);
+
   },
 
   /**
@@ -152,24 +130,33 @@ export const actions = {
   },
 
   /**
-   * update slug
-   * @param context
-   * @param slug
-   * @constructor
+   * reset state
    */
+  RESET_ARTICLE_STATE({commit}) {
+    commit('ARTICLES_RESET_STATE');
+  },
+
+
+  UPDATE_CATEGORY_ID (context, category) {
+    if(category.checked) {
+      context.commit('UPDATE_CATEGORY', parseInt(category.id))
+    } else {
+      context.commit('REMOVE_CATEGORY_ID', parseInt(category.id))
+    }
+  }
+
+};
+
+export const mutations = {
+
+  SET_SLUG: (state, slug) => {
+    state.article.slug = slug;
+  },
+
   UPDATE_SLUG(context, slug) {
     context.commit('SET_SLUG', slug)
   },
 
-  /**
-   * reset state
-   */
-  RESET_ARTICLE_STATE({commit}) {
-    commit('ARTICLE_RESET_STATE');
-  },
-}
-
-export const mutations = {
   /**
    * mutate articles state
    * @param state
@@ -178,11 +165,47 @@ export const mutations = {
    */
   SET_ALL_ARTICLES: (state, articles) => {
     state.articles = articles;
-    state.articleStateChanged = false;
   },
 
-  updateTitle(state, value) {
+
+  SET_SORT_ARTICLES: (state, sortKey) => {
+
+    //if s == current sort, reverse
+    if(sortKey === state.currentSort) {
+      state.currentSortDir = state.currentSortDir === 'asc' ? 'desc' : 'asc';
+    }
+    state.currentSort = sortKey;
+      state.articles.sort((a,b) => {
+        let modifier = 1;
+        if(state.currentSortDir === 'desc') modifier = -1;
+        if(a[state.currentSort] < b[state.currentSort]) return -1 * modifier;
+        if(a[state.currentSort] > b[state.currentSort]) return modifier;
+        return state.articles;
+      });
+
+  },
+
+  UPDATE_TITLE(state, value) {
+    console.log('here yes', value);
     state.article.title = value;
+  },
+
+  UPDATE_CATEGORY(state, value) {
+    state.article.category_id.push(value);
+  },
+
+  REMOVE_CATEGORY_ID(state, value) {
+    state.article.category_id = state.article.category_id.filter( category => {
+    return category !== value;
+    });
+  },
+
+  UPDATE_CONTENT(state, value) {
+    state.article.content = value;
+  },
+
+  UPDATE_IS_PUBLIC(state, value) {
+    state.article.is_public = value;
   },
 
   /**
@@ -194,6 +217,7 @@ export const mutations = {
   SET_ARTICLE_DATA: (state, article) => {
     state.article = article;
     state.article.photo = '../storage/article/' + state.article.photo;
+    state.article.created_at = new Date().toLocaleDateString('de-DE', { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric' })
   },
 
   /**
@@ -207,28 +231,24 @@ export const mutations = {
   },
 
   /**
-   * set slug
-   * @param state
-   * @param slug
-   * @constructor
-   */
-  SET_SLUG: (state, slug) => {
-    state.article.slug = slug;
-  },
-
-  /**
    * reset user state
    * @param state
    * @constructor
    */
-  ARTICLE_RESET_STATE: (state) => {
+  ARTICLES_RESET_STATE: (state) => {
     Object.assign(state, initialArticleState());
+  },
+
+  RESET_ARTICLE: (state) => {
+    Object.assign(state, initialArticleState());
+    console.log('article reset', state.article);
   },
 
   RESET_ARTICLE_FILTERS: (state) => {
     Object.assign(state, initialArticleFilters());
   }
-}
+
+};
 
 export const getters = {
   articles: (state) => {
@@ -239,5 +259,6 @@ export const getters = {
   },
   articleFilter: (state) => {
     return state.articleFilter;
-  }
-}
+  },
+
+};

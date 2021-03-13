@@ -24,11 +24,7 @@
 
     async fetch(context) {
         await context.store.dispatch('users/fetch_user', context.params.id);
-
     },
-
-
-
   }
 </script>
 

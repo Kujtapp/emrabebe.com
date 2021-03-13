@@ -70,15 +70,14 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
     'nuxt-i18n',
+    'vue-sweetalert2/nuxt',
   ],
-
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     baseUrl: 'http://localhost:8000',
     credentials: true,
   },
-
 
   auth: {
     strategies: {
