@@ -34,6 +34,11 @@ export const state = () => ({
 
 export const actions = {
 
+
+  UPDATE_SLUG(context, slug) {
+    context.commit('SET_SLUG', slug)
+  },
+
   async FETCH_ALL_ARTICLES(context) {
     if (Object.keys(context.state.articles).length !== 0 ) {
       return this.state.articles;
@@ -91,7 +96,7 @@ export const actions = {
    * @param context
    */
   async UPDATE_ARTICLE(context) {
-    state.articles = [];
+    context.state.articles = [];
     const url = '/api/articles/';
     // await this.$axios.get('/sanctum/csrf-cookie');
     await this.$axios.put(url + context.state.article.id, context.state.article);
@@ -153,10 +158,6 @@ export const mutations = {
     state.article.slug = slug;
   },
 
-  UPDATE_SLUG(context, slug) {
-    context.commit('SET_SLUG', slug)
-  },
-
   /**
    * mutate articles state
    * @param state
@@ -186,7 +187,6 @@ export const mutations = {
   },
 
   UPDATE_TITLE(state, value) {
-    console.log('here yes', value);
     state.article.title = value;
   },
 

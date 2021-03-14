@@ -23,7 +23,7 @@ export default {
 
   data() {
    return {
-     id: this.$route.params.slug,
+     slug: this.$route.params.slug,
    }
   }
 

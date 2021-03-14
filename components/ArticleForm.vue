@@ -6,8 +6,7 @@
           <div class="col-md-8 col-md-8 col-lg-8">
             <div class="form-group">
               <input type="text" placeholder="Title" :value="article.title" @input="updateTitle" name="title" class="form-control" required>
-<!--                <Slug url="www.website.com" sub-directory="blog" title="article title"></Slug>-->
-              <span>{{ article.slug }}</span>
+              <Slug url="www.website.com" sub-directory="blog" :title="article.title" :result="article.slug"></Slug>
             </div>
             <div class="form-group">
 
@@ -100,7 +99,7 @@ export default {
     return {
       inProgress: false,
       errors: {},
-      id: this.$route.params.id,
+      // id: this.$route.params.id,
       action: '',
       actionMessage: '',
       newContent: '',
@@ -147,12 +146,13 @@ export default {
     updateTitle (e) {
       this.$store.commit('articles/UPDATE_TITLE', e.target.value);
     },
+
     updateIsPublic (e) {
       this.$store.commit('articles/UPDATE_IS_PUBLIC', e);
     },
 
     onSubmit() {
-      if (this.id) {
+      if (this.article.id) {
         this.action = 'articles/' + 'UPDATE_ARTICLE';
         this.actionMessage = 'Updated'
       } else {
@@ -206,7 +206,7 @@ export default {
   },
 
   created() {
-    if (this.id) {
+    if (this.article.id) {
       this.editor.setContent(this.article.content);
     }
   },

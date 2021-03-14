@@ -105,9 +105,11 @@ export default {
       logout: '/',
       home: '/admin/dashboard',
     },
+    resetOnError: true
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
 
 }
