@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.img-wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.navbar .navbar-brand {
+  color: #8FC74A;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-top: 1px solid #8FC74A;
+  margin-right: 110px;
+}
+
+.mt-6 {
+  margin-top: 150px;
+}
+
+.nav-link {
+  color: #707070;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #8FC74A;
+}
+
+@media (max-width: 780px) {
+  .img-wrapper img {
+    display: none;
+  }
+}
+
+.ops {
+  font-size: 89px;
+  color: #707070;
+}
+
+.ad {
+  background-color: #EEEEEE;
+}
+/*# sourceMappingURL=kujta.css.map */
