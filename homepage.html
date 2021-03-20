@@ -13,12 +13,38 @@
     <title>Hello, world!</title>
   </head>
   <body>
+
+
+        <!-- mobile header     -->
+      <section id="header-mob">
+        <div class="container mt-3 mb-2 d-flex justify-content-between"> 
+        <i class="fas fa-search mt-1"></i>   
+        <a href="index.html"><img  src="logo.png" alt="logo" width="120px"></a>
+        <i class="fas fa-bars mt-1"></i>        
+        </div>  
+      </section> 
+
+    <img src="beba.jpg" alt="baby" class="baby" width="100%" height="100%">
     
-    <!-- Header -->
+     <!-- mobile content -->
+     <section id="content-mob">
+       <div class="container">
+        <h1 class="text-center text-muted">Kërko emrin e</h1>
+        <h1 class="text-center text-muted">femijut te arshem..</h1>
+        <p class="small text-muted">femijuim.com është burimi më i madh në botë për
+          emrat e fëmijëve, që përmban një bazë të dhënash prej
+          70,000+ emra vajzash dhe emra djemsh (dhe emra asnjanës
+          gjinorë), mijëra lista gjithëpërfshirëse dhe krijuese
+          të emrave, forume miqësore, plus lajme dhe këshilla nga
+          ekspertët për të ndihmuar ju gjeni emrin perfekt për foshnjën tuaj.</p>
+       </div>
+
+    </section>
+
+    <!-- Desktop-Header -->
         <div class="container mt-4">
             <!-- nav bar -->
             <nav class="navbar navbar-expand-lg navbar-light mb-5">
-              <div class="container-fluid">
                 <a class="navbar-brand" href="#"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -31,18 +57,19 @@
                     <a class="nav-link" href="#">Kyqu</a>
                   </div>
                 </div>
-              </div>
             </nav>
+
+            
 
             <!-- content -->
               <div class="row">
-                <div class="col-5">
-                    <img src="logo.png" alt="logo" width="450px" class="mt-5">
-                    <h4 class="text-center mt-5">Si dëshironi të jet emri?</h4>
-                    <hr class="divider mt-2 mb-5">
+                <div class="col-lg-4 col-md-8 col-sm-10 ">
+                      <img src="logo.png" alt="logo" class="logo mt-5 w-100">
+                      <h4 class="text-center mt-5">Si dëshironi të jet emri?</h4>
+                      <hr class="divider mt-2 mb-5">
 
                             <!-- Checks -->
-                    <div class="container d-flex justify-content-center mt-3">
+                    <div class="d-flex justify-content-center mt-3 mx-auto">
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                         <label class="form-check-label" for="inlineRadio1">Vajzë</label>
@@ -54,32 +81,31 @@
                     </div>  
                     
                           <!-- Select Fields -->    
-                        <div class="container mt-3">
-                              <select class="form-select" aria-label="Default select example">
-                                <option selected>Shkronja e parë</option>
-                                <option value="1">A</option>
-                                <option value="2">B</option>
-                                <option value="3">C</option>
-                              </select>
-
-                          <select class="form-select mt-4" aria-label="Default select example">
-                                <option selected>Origjina</option>
-                                <option value="1">Shqiperi</option>
-                                <option value="2">Kosovë</option>
-                                <option value="3">Maqeodni</option>
-                          </select>
-
-                          <div class="d-grid gap-2 mt-4">
-                            <a class="btn btn-brand" type="button">Kërko</a>
-                          </div>
-                          <p class="small text-muted mt-1">Shiko te gjitha pa filter</p>
                         
-                        </div>
+                          <div class="mt-3">
+                                <select class="form-select" aria-label="Default select example">
+                                  <option selected>Shkronja e parë</option>
+                                  <option value="1">A</option>
+                                  <option value="2">B</option>
+                                  <option value="3">C</option>
+                                </select>
+
+                                <select class="form-select mt-4" aria-label="Default select example">
+                                      <option selected>Origjina</option>
+                                      <option value="1">Shqiperi</option>
+                                      <option value="2">Kosovë</option>
+                                      <option value="3">Maqeodni</option>
+                                </select>
+
+                                <div class="d-grid gap-2 mt-4">
+                                  <a class="btn btn-brand" type="submit">Kërko</a>
+                                </div>
+                                <p class="small text-muted mt-1">Shiko te gjitha pa filter</p>
+                          </div>
                 </div>        
               </div>        
         </div>  
         <p class="copyright small text-muted fixed-bottom"> © 2021 femijuim.com</p>    
-        <img src="beba.jpg" alt="baby" class="baby" width="100%">
 
         
 
