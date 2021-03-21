@@ -16,6 +16,7 @@
     <!-- mobile content -->
     <section id="content-mob">
       <div class="container">
+
         <h1 class="text-center text-muted">Kërko emrin e</h1>
         <h1 class="text-center text-muted">femijut te arshem..</h1>
         <p class="small text-muted">femijuim.com është burimi më i madh në botë për
@@ -25,7 +26,6 @@
           të emrave, forume miqësore, plus lajme dhe këshilla nga
           ekspertët për të ndihmuar ju gjeni emrin perfekt për foshnjën tuaj.</p>
       </div>
-
     </section>
 
     <!-- Desktop-Header -->
